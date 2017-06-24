@@ -1,13 +1,35 @@
 package domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.xml.bind.annotation.*;
+
+@SuppressWarnings("restriction")
+@XmlRootElement
+@Entity
+@NamedQueries({
+	@NamedQuery(name="person.all", query="SELECT p FROM Person p"),
+	@NamedQuery(name="person.id", query="FROM Person p WHERE p.id=:personId")
+})
 public class Person {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private String surname;
-	private List<Car> cars;
+	
+	@XmlTransient
+	@OneToMany(mappedBy="person")
+	private List<Car> cars = new ArrayList<Car>();
 	
 	public int getId() {
 		return id;

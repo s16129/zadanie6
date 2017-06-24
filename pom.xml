@@ -4,7 +4,15 @@
   <artifactId>samplerest</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
- 
+  <distributionManagement>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>zadanie4</id>
+      <name>Zadanie 4</name>
+      <url>file://D:/deploy6</url>
+      <layout>default</layout>
+    </repository>
+  </distributionManagement>
   <dependencies>
 	<dependency>
 		<groupId>javax</groupId>
@@ -31,7 +39,7 @@
   </dependencies>
   
   <build>
-		<finalName>samplerestapp</finalName>
+		<finalName>zadanie6</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
