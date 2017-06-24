@@ -22,10 +22,11 @@ Przykładowy obiekt do testów:
     }
 
 Dopuszczane wartości patrametru ''price'':
+
     graphics
-	  motherboard
-	  hdd
-	  ram
+    motherboard
+    hdd
+    ram
     
 ## Adresy URL i metody HTTP
 
@@ -35,6 +36,7 @@ Wszystkie produkty
     GET /products
 
 Metoda pobierania wszystkich produktów umożliwia również stosowanie filtrów pobieranych produktów, poadawnych jako parametry GET:
+
     name - fragment nazwy produktu
     category - kategoria produktu
     price_min - minimalna cena produktu
